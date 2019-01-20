@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="colmazure.database.windows.net.RandomData.colm2019"
+  DTS:DTSID="{4E11F0BB-8A67-4F84-A771-5AD5FE189AB7}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=colmazure.database.windows.net;User ID=colm2019;Initial Catalog=RandomData;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAktkSCjxtzUK6dPVES/tbdwAAAAACAAAAAAAQZgAAAAEAACAAAAClNV7W7oPRnwRk0Nn2v/V5gwDKloac6a248yCf1yKEUgAAAAAOgAAAAAIAACAAAADMsnUwJJTkKUVDEN745G5ex2jrf0nb/KJECtHiR//2HYAAAAAfJRinao1/KGvd8CDzij2VFEpkBBtJZ5bCEeXLN/lrkbi06G6iKMSLfRTlnc0Id2rc334z+RUSU+aEA64vjbIof19sgvPLy0D5pS0xVkpIvXbAECPxcn0m1pMPGPFWQ0LUUCMixJdLN+BzSM0uhP3/FrIESzYx3t1Cxfx1sbb2T0AAAAArrlVfj/yrL1q5gci+hMUCu1Rpo7BrJgAyML0/i7twxnkn4xIGi+zR5hYoMiu8x8ZINvYzw5DdtlPLfKdb9S0D</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

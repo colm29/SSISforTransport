@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="1/20/2019 7:56:19 PM"
@@ -11,9 +11,605 @@
   DTS:LocaleID="6153"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionGUID="{AFF00708-2351-4406-B257-A9A37D431050}">
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{437E23A3-539A-45AC-966D-950E12A6EE21}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
-  <DTS:Executables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Extract Data"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{316EC865-E94B-4BA9-99FD-C2BC44A26863}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Extract Data"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Extract Data\Source CSV"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="6153"
+              name="Source CSV"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extract Data\Source CSV.Connections[FlatFileConnection]"
+                  connectionManagerID="{041C9836-F781-4554-B7EF-778685B89879}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Extract Data\Source CSV.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract Data\Source CSV.Outputs[Flat File Source Output].Columns[&quot;Origin Movement ID&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Data\Source CSV.Outputs[Flat File Source Output].ExternalColumns[&quot;Origin Movement ID&quot;]"
+                      length="50"
+                      lineageId="Package\Extract Data\Source CSV.Outputs[Flat File Source Output].Columns[&quot;Origin Movement ID&quot;]"
+                      name="&quot;Origin Movement ID&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract Data\Source CSV.Outputs[Flat File Source Output].Columns[&quot;Origin Display Name&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Data\Source CSV.Outputs[Flat File Source Output].ExternalColumns[&quot;Origin Display Name&quot;]"
+                      length="200"
+                      lineageId="Package\Extract Data\Source CSV.Outputs[Flat File Source Output].Columns[&quot;Origin Display Name&quot;]"
+                      name="&quot;Origin Display Name&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract Data\Source CSV.Outputs[Flat File Source Output].Columns[&quot;Destination Movement ID&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Data\Source CSV.Outputs[Flat File Source Output].ExternalColumns[&quot;Destination Movement ID&quot;]"
+                      length="50"
+                      lineageId="Package\Extract Data\Source CSV.Outputs[Flat File Source Output].Columns[&quot;Destination Movement ID&quot;]"
+                      name="&quot;Destination Movement ID&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract Data\Source CSV.Outputs[Flat File Source Output].Columns[&quot;Destination Display Name&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Data\Source CSV.Outputs[Flat File Source Output].ExternalColumns[&quot;Destination Display Name&quot;]"
+                      length="50"
+                      lineageId="Package\Extract Data\Source CSV.Outputs[Flat File Source Output].Columns[&quot;Destination Display Name&quot;]"
+                      name="&quot;Destination Display Name&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract Data\Source CSV.Outputs[Flat File Source Output].Columns[&quot;Date Range&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Data\Source CSV.Outputs[Flat File Source Output].ExternalColumns[&quot;Date Range&quot;]"
+                      length="50"
+                      lineageId="Package\Extract Data\Source CSV.Outputs[Flat File Source Output].Columns[&quot;Date Range&quot;]"
+                      name="&quot;Date Range&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract Data\Source CSV.Outputs[Flat File Source Output].Columns[&quot;Mean Travel Time (Seconds)&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Data\Source CSV.Outputs[Flat File Source Output].ExternalColumns[&quot;Mean Travel Time (Seconds)&quot;]"
+                      length="50"
+                      lineageId="Package\Extract Data\Source CSV.Outputs[Flat File Source Output].Columns[&quot;Mean Travel Time (Seconds)&quot;]"
+                      name="&quot;Mean Travel Time (Seconds)&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract Data\Source CSV.Outputs[Flat File Source Output].Columns[&quot;Range - Lower Bound Travel Time (Seconds)&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Data\Source CSV.Outputs[Flat File Source Output].ExternalColumns[&quot;Range - Lower Bound Travel Time (Seconds)&quot;]"
+                      length="50"
+                      lineageId="Package\Extract Data\Source CSV.Outputs[Flat File Source Output].Columns[&quot;Range - Lower Bound Travel Time (Seconds)&quot;]"
+                      name="&quot;Range - Lower Bound Travel Time (Seconds)&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract Data\Source CSV.Outputs[Flat File Source Output].Columns[&quot;Range - Upper Bound Travel Time (Seconds)&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Data\Source CSV.Outputs[Flat File Source Output].ExternalColumns[&quot;Range - Upper Bound Travel Time (Seconds)&quot;]"
+                      length="50"
+                      lineageId="Package\Extract Data\Source CSV.Outputs[Flat File Source Output].Columns[&quot;Range - Upper Bound Travel Time (Seconds)&quot;]"
+                      name="&quot;Range - Upper Bound Travel Time (Seconds)&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extract Data\Source CSV.Outputs[Flat File Source Output].ExternalColumns[&quot;Origin Movement ID&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Origin Movement ID&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Data\Source CSV.Outputs[Flat File Source Output].ExternalColumns[&quot;Origin Display Name&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="&quot;Origin Display Name&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Data\Source CSV.Outputs[Flat File Source Output].ExternalColumns[&quot;Destination Movement ID&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Destination Movement ID&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Data\Source CSV.Outputs[Flat File Source Output].ExternalColumns[&quot;Destination Display Name&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Destination Display Name&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Data\Source CSV.Outputs[Flat File Source Output].ExternalColumns[&quot;Date Range&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Date Range&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Data\Source CSV.Outputs[Flat File Source Output].ExternalColumns[&quot;Mean Travel Time (Seconds)&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Mean Travel Time (Seconds)&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Data\Source CSV.Outputs[Flat File Source Output].ExternalColumns[&quot;Range - Lower Bound Travel Time (Seconds)&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Range - Lower Bound Travel Time (Seconds)&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Data\Source CSV.Outputs[Flat File Source Output].ExternalColumns[&quot;Range - Upper Bound Travel Time (Seconds)&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Range - Upper Bound Travel Time (Seconds)&quot;" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Extract Data\Source CSV.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract Data\Source CSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Extract Data\Source CSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Extract Data\Source CSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extract Data\Source CSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extract Data\Source CSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extract Data\Source CSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Extract Data\SQL Database"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="SQL Database"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[TravelTimesTestCopy]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extract Data\SQL Database.Connections[OleDbConnection]"
+                  connectionManagerID="{4E11F0BB-8A67-4F84-A771-5AD5FE189AB7}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[colmazure.database.windows.net.RandomData.colm2019]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Extract Data\SQL Database.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Extract Data\SQL Database.Inputs[OLE DB Destination Input].Columns[&quot;Origin Movement ID&quot;]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Origin Movement ID&quot;"
+                      externalMetadataColumnId="Package\Extract Data\SQL Database.Inputs[OLE DB Destination Input].ExternalColumns[Origin Movement ID]"
+                      lineageId="Package\Extract Data\Source CSV.Outputs[Flat File Source Output].Columns[&quot;Origin Movement ID&quot;]" />
+                    <inputColumn
+                      refId="Package\Extract Data\SQL Database.Inputs[OLE DB Destination Input].Columns[&quot;Origin Display Name&quot;]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="&quot;Origin Display Name&quot;"
+                      externalMetadataColumnId="Package\Extract Data\SQL Database.Inputs[OLE DB Destination Input].ExternalColumns[Origin Display Name]"
+                      lineageId="Package\Extract Data\Source CSV.Outputs[Flat File Source Output].Columns[&quot;Origin Display Name&quot;]" />
+                    <inputColumn
+                      refId="Package\Extract Data\SQL Database.Inputs[OLE DB Destination Input].Columns[&quot;Destination Movement ID&quot;]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Destination Movement ID&quot;"
+                      externalMetadataColumnId="Package\Extract Data\SQL Database.Inputs[OLE DB Destination Input].ExternalColumns[Destination Movement ID]"
+                      lineageId="Package\Extract Data\Source CSV.Outputs[Flat File Source Output].Columns[&quot;Destination Movement ID&quot;]" />
+                    <inputColumn
+                      refId="Package\Extract Data\SQL Database.Inputs[OLE DB Destination Input].Columns[&quot;Destination Display Name&quot;]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Destination Display Name&quot;"
+                      externalMetadataColumnId="Package\Extract Data\SQL Database.Inputs[OLE DB Destination Input].ExternalColumns[Destination Display Name]"
+                      lineageId="Package\Extract Data\Source CSV.Outputs[Flat File Source Output].Columns[&quot;Destination Display Name&quot;]" />
+                    <inputColumn
+                      refId="Package\Extract Data\SQL Database.Inputs[OLE DB Destination Input].Columns[&quot;Date Range&quot;]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Date Range&quot;"
+                      externalMetadataColumnId="Package\Extract Data\SQL Database.Inputs[OLE DB Destination Input].ExternalColumns[Date Range]"
+                      lineageId="Package\Extract Data\Source CSV.Outputs[Flat File Source Output].Columns[&quot;Date Range&quot;]" />
+                    <inputColumn
+                      refId="Package\Extract Data\SQL Database.Inputs[OLE DB Destination Input].Columns[&quot;Mean Travel Time (Seconds)&quot;]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Mean Travel Time (Seconds)&quot;"
+                      externalMetadataColumnId="Package\Extract Data\SQL Database.Inputs[OLE DB Destination Input].ExternalColumns[Mean Travel Time (Seconds)]"
+                      lineageId="Package\Extract Data\Source CSV.Outputs[Flat File Source Output].Columns[&quot;Mean Travel Time (Seconds)&quot;]" />
+                    <inputColumn
+                      refId="Package\Extract Data\SQL Database.Inputs[OLE DB Destination Input].Columns[&quot;Range - Lower Bound Travel Time (Seconds)&quot;]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Range - Lower Bound Travel Time (Seconds)&quot;"
+                      externalMetadataColumnId="Package\Extract Data\SQL Database.Inputs[OLE DB Destination Input].ExternalColumns[Range - Lower Bound Travel Time (Seconds)]"
+                      lineageId="Package\Extract Data\Source CSV.Outputs[Flat File Source Output].Columns[&quot;Range - Lower Bound Travel Time (Seconds)&quot;]" />
+                    <inputColumn
+                      refId="Package\Extract Data\SQL Database.Inputs[OLE DB Destination Input].Columns[&quot;Range - Upper Bound Travel Time (Seconds)&quot;]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Range - Upper Bound Travel Time (Seconds)&quot;"
+                      externalMetadataColumnId="Package\Extract Data\SQL Database.Inputs[OLE DB Destination Input].ExternalColumns[Range - Upper Bound Travel Time (Seconds)]"
+                      lineageId="Package\Extract Data\Source CSV.Outputs[Flat File Source Output].Columns[&quot;Range - Upper Bound Travel Time (Seconds)&quot;]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extract Data\SQL Database.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      dataType="i4"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Data\SQL Database.Inputs[OLE DB Destination Input].ExternalColumns[Origin Movement ID]"
+                      dataType="i4"
+                      name="Origin Movement ID" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Data\SQL Database.Inputs[OLE DB Destination Input].ExternalColumns[Origin Display Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="Origin Display Name" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Data\SQL Database.Inputs[OLE DB Destination Input].ExternalColumns[Destination Movement ID]"
+                      dataType="i4"
+                      name="Destination Movement ID" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Data\SQL Database.Inputs[OLE DB Destination Input].ExternalColumns[Destination Display Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="Destination Display Name" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Data\SQL Database.Inputs[OLE DB Destination Input].ExternalColumns[Date Range]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="Date Range" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Data\SQL Database.Inputs[OLE DB Destination Input].ExternalColumns[Mean Travel Time (Seconds)]"
+                      dataType="i4"
+                      name="Mean Travel Time (Seconds)" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Data\SQL Database.Inputs[OLE DB Destination Input].ExternalColumns[Range - Lower Bound Travel Time (Seconds)]"
+                      dataType="i4"
+                      name="Range - Lower Bound Travel Time (Seconds)" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Data\SQL Database.Inputs[OLE DB Destination Input].ExternalColumns[Range - Upper Bound Travel Time (Seconds)]"
+                      dataType="i4"
+                      name="Range - Upper Bound Travel Time (Seconds)" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Extract Data\SQL Database.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Extract Data\SQL Database.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract Data\SQL Database.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extract Data\SQL Database.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extract Data\SQL Database.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extract Data\SQL Database.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Extract Data.Paths[Flat File Source Output]"
+              endId="Package\Extract Data\SQL Database.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Extract Data\Source CSV.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="137,42"
+          Id="Package\Extract Data"
+          TopLeft="310,143" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Extract Data">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="133,42"
+          Id="Package\Extract Data\Source CSV"
+          TopLeft="335,61" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\Extract Data\SQL Database"
+          TopLeft="322,169" />
+        <EdgeLayout
+          Id="Package\Extract Data.Paths[Flat File Source Output]"
+          TopLeft="398,103">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,66"
+              Start="0,0"
+              End="0,58.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,58.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extract Data\SQL Database">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
