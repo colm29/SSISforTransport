@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "SSISforTransport", "SSISforTransport\SSISforTransport.dtproj", "{DA8C9341-1339-4A16-AF87-964E80E817B2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA8C9341-1339-4A16-AF87-964E80E817B2}.Development|Default.ActiveCfg = Development
+		{DA8C9341-1339-4A16-AF87-964E80E817B2}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B449D9F1-604B-47D4-A923-5348F9BCA0EA}
+	EndGlobalSection
+EndGlobal
